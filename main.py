@@ -142,7 +142,7 @@ def main() -> int:
     print(f"Metadata status: {report['metadata_extraction']['status']}")
     print(f"JPEG profile status: {report['jpeg_profile']['status']}")
     print(f"Master Metadata Record: {mmr_path}")
-    
+
     if report["warnings"]:
         print(f"Warnings: {len(report['warnings'])}")
         for warning in report["warnings"]:
