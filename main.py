@@ -15,6 +15,8 @@ from src.extraction.metadata_extractor import (
 from src.extraction.jpeg_profiler import profile_jpeg
 from src.extraction.thumbnail_extractor import extract_thumbnail
 from src.extraction.jpeg_marker_analyzer import analyze_jpeg_markers
+from src.extraction.consistency_analyzer import analyze_consistency
+from src.metadata.master_metadata_record import (build_master_metadata_record)
 
 
 def build_report(input_path: str) -> dict:
@@ -54,7 +56,24 @@ def build_report(input_path: str) -> dict:
         )
 
     report["metadata_extraction"] = extract_metadata(resolved_path)
+
+    report["metadata_consistency"] = analyze_consistency(
+        report["metadata_extraction"]
+    )
+
     report["jpeg_profile"] = profile_jpeg(resolved_path)
+
+    # Phase 2: Generate Master Metadata Record
+    report["master_metadata_record"] = build_master_metadata_record(
+        report["metadata_extraction"],
+        report["metadata_consistency"],
+        input_info={
+            "filename": report["input"]["filename"],
+            "sha256": report["integrity"]["original_sha256"],
+            "detected_format": report["input"]["detected_format"],
+        },
+        jpeg_profile=report["jpeg_profile"],
+    )
     report["thumbnail_extraction"] = extract_thumbnail(resolved_path)
     report["jpeg_structure"] = analyze_jpeg_markers(resolved_path)
 
@@ -105,13 +124,25 @@ def main() -> int:
         encoding="utf-8",
     )
 
+    # Save standalone Master Metadata Record
+    mmr_path = output_path.parent / f"{output_path.stem.replace('_report', '')}_mmr.json"
+
+    mmr_path.write_text(
+        json.dumps(
+            report["master_metadata_record"],
+            indent=2,
+            ensure_ascii=False,
+        ),
+        encoding="utf-8",
+    )
+
     print("[OK] PixelVeil Phase 1 inspection completed.")
     print(f"Input:  {report['input']['filename']}")
     print(f"SHA256: {report['integrity']['original_sha256']}")
     print(f"Metadata status: {report['metadata_extraction']['status']}")
     print(f"JPEG profile status: {report['jpeg_profile']['status']}")
-    print(f"Report: {output_path}")
-
+    print(f"Master Metadata Record: {mmr_path}")
+    
     if report["warnings"]:
         print(f"Warnings: {len(report['warnings'])}")
         for warning in report["warnings"]:

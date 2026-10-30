@@ -1,0 +1,186 @@
+{
+  "schema_version": "1.0",
+  "record_type": "PixelVeil Master Metadata Record",
+  "created_utc": "2026-10-30T18:44:05.816681+00:00",
+  "image": {
+    "filename": "sample.jpg",
+    "sha256": "cba9af6cb9fe1968f95e5842622178c3befc31778214c600a48c4dc4308bac50",
+    "format": "JPEG",
+    "width": 5184,
+    "height": 3456
+  },
+  "camera": {
+    "make": "Canon",
+    "model": "Canon EOS 600D"
+  },
+  "lens": {
+    "model": "EF-S55-250mm f/4-5.6 IS II"
+  },
+  "capture": {
+    "datetime": "2025:04:02 01:35:54"
+  },
+  "modification": {
+    "datetime": "2025:04:09 22:55:43"
+  },
+  "color_profile": {
+    "description": "sRGB IEC61966-2.1"
+  },
+  "jpeg": {
+    "progressive": false,
+    "mode": "RGB",
+    "has_icc_profile": true
+  },
+  "metadata_status": "success",
+  "consistency_summary": {
+    "consistent": 6,
+    "mismatches": 0,
+    "missing": 0,
+    "not_comparable": 2
+  },
+  "fields": {
+    "camera_make": {
+      "value": "Canon",
+      "preferred_source": "IFD0:Make",
+      "sources": [
+        {
+          "source_tag": "IFD0:Make",
+          "raw_value": "Canon"
+        }
+      ],
+      "source_count": 1,
+      "consistency": "not_comparable"
+    },
+    "camera_model": {
+      "value": "Canon EOS 600D",
+      "preferred_source": "IFD0:Model",
+      "sources": [
+        {
+          "source_tag": "IFD0:Model",
+          "raw_value": "Canon EOS 600D"
+        }
+      ],
+      "source_count": 1,
+      "consistency": "not_comparable"
+    },
+    "lens_model": {
+      "value": "EF-S55-250mm f/4-5.6 IS II",
+      "preferred_source": "ExifIFD:LensModel",
+      "sources": [
+        {
+          "source_tag": "ExifIFD:LensModel",
+          "raw_value": "EF-S55-250mm f/4-5.6 IS II"
+        },
+        {
+          "source_tag": "XMP-aux:Lens",
+          "raw_value": "EF-S55-250mm f/4-5.6 IS II"
+        },
+        {
+          "source_tag": "XMP-exifEX:LensModel",
+          "raw_value": "EF-S55-250mm f/4-5.6 IS II"
+        }
+      ],
+      "source_count": 3,
+      "consistency": "consistent"
+    },
+    "capture_datetime": {
+      "value": "2025:04:02 01:35:54",
+      "preferred_source": "ExifIFD:DateTimeOriginal",
+      "sources": [
+        {
+          "source_tag": "ExifIFD:DateTimeOriginal",
+          "raw_value": "2025:04:02 01:35:54"
+        },
+        {
+          "source_tag": "ExifIFD:CreateDate",
+          "raw_value": "2025:04:02 01:35:54"
+        },
+        {
+          "source_tag": "XMP-xmp:CreateDate",
+          "raw_value": "2025:04:02 01:35:54"
+        },
+        {
+          "source_tag": "IPTC:DateCreated",
+          "raw_value": "2025:04:02"
+        }
+      ],
+      "source_count": 4,
+      "consistency": "consistent"
+    },
+    "modification_datetime": {
+      "value": "2025:04:09 22:55:43",
+      "preferred_source": "IFD0:ModifyDate",
+      "sources": [
+        {
+          "source_tag": "IFD0:ModifyDate",
+          "raw_value": "2025:04:09 22:55:43"
+        },
+        {
+          "source_tag": "XMP-xmp:ModifyDate",
+          "raw_value": "2025:04:09 22:55:43+05:30"
+        },
+        {
+          "source_tag": "XMP-xmp:MetadataDate",
+          "raw_value": "2025:04:09 22:55:43+05:30"
+        }
+      ],
+      "source_count": 3,
+      "consistency": "consistent"
+    },
+    "image_width": {
+      "value": 5184,
+      "preferred_source": "IFD0:ImageWidth",
+      "sources": [
+        {
+          "source_tag": "IFD0:ImageWidth",
+          "raw_value": 5184
+        },
+        {
+          "source_tag": "File:ImageWidth",
+          "raw_value": 5184
+        },
+        {
+          "source_tag": "ExifIFD:ExifImageWidth",
+          "raw_value": 5184
+        }
+      ],
+      "source_count": 3,
+      "consistency": "consistent"
+    },
+    "image_height": {
+      "value": 3456,
+      "preferred_source": "IFD0:ImageHeight",
+      "sources": [
+        {
+          "source_tag": "IFD0:ImageHeight",
+          "raw_value": 3456
+        },
+        {
+          "source_tag": "File:ImageHeight",
+          "raw_value": 3456
+        },
+        {
+          "source_tag": "ExifIFD:ExifImageHeight",
+          "raw_value": 3456
+        }
+      ],
+      "source_count": 3,
+      "consistency": "consistent"
+    },
+    "icc_profile": {
+      "value": "sRGB IEC61966-2.1",
+      "preferred_source": "ICC_Profile:ProfileDescription",
+      "sources": [
+        {
+          "source_tag": "ICC_Profile:ProfileDescription",
+          "raw_value": "sRGB IEC61966-2.1"
+        },
+        {
+          "source_tag": "XMP-photoshop:ICCProfileName",
+          "raw_value": "sRGB IEC61966-2.1"
+        }
+      ],
+      "source_count": 2,
+      "consistency": "consistent"
+    }
+  }
+}
